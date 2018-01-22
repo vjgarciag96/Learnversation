@@ -1,0 +1,28 @@
+<div class="formWrapper">
+	<h1>Registrate en la web</h1>
+	<form data-ng-submit="vm.functions.confirmRegistration()">
+		<p class="errorMessage">{{vm.validationError}}</p>
+		<label>Nombre de usuario: <input type="text"
+			placeholder="Nombre" data-ng-model="vm.user.username"></label>
+		<label>Fecha de nacimiento: <input type="date"
+			data-ng-model="vm.birthDateFormated"></label><label>País de residencia:<select data-ng-model="vm.user.country"
+				data-ng-options="country.name as country.name for country in vm.countries track by country.countryId">					
+					<option value="">País</option>
+				</select>
+		</label> <label>Género:</label> <label><input type="radio"
+			data-ng-model="vm.user.gender" value="Hombre">Hombre</label> <label><input
+			type="radio" data-ng-model="vm.user.gender" value="Mujer">Mujer</label>
+		<label>Tipo de intercambio</label> <label><input
+			type="checkbox" name="exchangeTypes"
+			data-ng-model="vm.exchangeTypeFirst">Conversación cara a cara</label>
+		<label><input type="checkbox" name="exchangeTypes"
+			data-ng-model="vm.exchangeTypeSecond">A través de internet</label> <label>Correo
+			electrónico: <input type="email" name="email" placeholder="E-mail"
+			data-ng-model="vm.user.email"></label><label>
+			Contraseña: <input type="password"
+			placeholder="Contraseña" data-ng-model ="vm.user.password" required></label> <label>Repetir
+			contraseña: <input type="password"
+			placeholder="Repetir contraseña" data-ng-model = "vm.repeatedPassword" required>
+		</label> <input type="submit" value="Registrarse">
+	</form>
+</div>

@@ -1,0 +1,123 @@
+<div class="userBox">
+		<div class="boxTitle">
+		<div data-ng-switch= "vm.editing" >
+			<h1 data-ng-switch-when = "true ">
+			{{vm.loggedUser.username}}
+			<a
+							href="#/editProfile">
+							<img class="icon" alt="Eliminar perfil"
+							src="../icons/edit.png">Editar
+							perfil
+						</a>
+						<a class="deleteProfile"
+							href="#/deleteProfile">
+							Dar de baja perfil<img class="icon" alt="Eliminar perfil"
+							src="../icons/deleteProfile.png">
+						</a>
+			</h1>
+			<h1 data-ng-switch-when = "false">
+			{{vm.visitedUser.username}}
+			</h1>	
+		</div>		
+		</div>
+		<div class="profileContent">
+			<div class="firstBlock">
+				<div class="profileInfo" id="profileImage">
+									<a
+										href="#/editProfileImage"><img
+										data-ng-src="../profileImages/{{vm.images[vm.loggedUser.idi].imageName}}"
+										alt="Foto de perfil de {{vm.loggedUser.username}}" 
+										data-ng-if = "vm.editing == true"></a>
+								<img										
+										alt="Foto de perfil de {{vm.visitedUser.username}}"
+										data-ng-src="../profileImages/{{vm.images[vm.visitedUser.idi].imageName}}"
+										alt="Foto de perfil de {{vm.visitedUser.username}}"
+										data-ng-if = "vm.editing == false">
+
+						<div class="changeProfileImageInfo" data-ng-if = "vm.editing == true">
+							<p class="changeImgProfileInfo">Pincha en la imagen para
+								cambiar la foto de perfil</p>
+						</div>
+				</div>
+
+				<div class="profileInfo" id="textInfo">
+					<h2>CORREO ELECTRÓNICO</h2>
+					<p data-ng-if = "vm.editing == true">{{vm.loggedUser.email}}</p>
+					<p>{{vm.visitedUser.email}}</p>
+					<h2>GÉNERO:</h2>
+					<p data-ng-if = "vm.editing == true">{{vm.loggedUser.gender}}</p>
+					<p>{{vm.visitedUser.gender}}</p>
+					<h2>FECHA DE NACIMIENTO:</h2>
+					<p data-ng-if = "vm.editing == true">{{vm.loggedUser.birthDate}}</p>
+					<p>{{vm.visitedUser.birthDate}}</p>
+					<h2>PAÍS:</h2>
+					<p data-ng-if = "vm.editing == true">{{vm.loggedUser.country}}</p>
+					<p>{{vm.visitedUser.country}}</p>
+					<h2>TIPO DE INTERCAMBIO:</h2>
+					<p data-ng-if = "vm.editing == true">{{vm.loggedUser.exchangeTypes}}</p>
+					<p>{{vm.visitedUser.exchangeTypes}}</p>
+					<h2>
+						IDIOMA/S
+							<a
+								href="#/addLanguage"><img
+								class="icon"
+								src="../icons/ic_add.png"
+								alt="añadir idioma" data-ng-if = "vm.editing == true"/></a>
+					</h2>
+					<div  data-ng-repeat = "userLanguage in vm.userLanguages">
+						<p class="userLanguageDescription">
+							{{vm.languages[userLanguage.idl].langname}}.Nivel hablado: {{vm.levels[userLanguage.speakingLevel].levelName}} 
+							Nivel escrito: {{vm.levels[userLanguage.writingLevel].levelName}} 
+							Nivel comprensión auditiva: {{vm.levels[userLanguage.listeningLevel].levelName}} 
+							Nivel comprensión lectora: {{vm.levels[userLanguage.readingLevel].levelName}}														
+						</p>
+						<p class="userLanguageDescription" data-ng-if = "vm.editing == true">
+								<a
+									data-ng-href="#/editLanguage/{{userLanguage.idl}}"><img
+									class="icon"
+									src="../icons/edit.png"
+									alt="editar ${userLanguage.idl}" /></a> <a
+									data-ng-href="#/deleteLanguage/{{userLanguage.idl}}"><img
+									class="icon"
+									src="../icons/delete.png"
+									alt="edit ${order.id }" /></a>
+						</p> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="commentsWrapper">
+			<p>{{vm.messageState}}</p>	
+			<p class="errorMessage">{{vm.errorMessage}}</p>
+			<div class="userComments" data-ng-if = "vm.editing == false">
+				<h1 class="userComments">Enviar comentario a
+					{{vm.visitedUser.username}}</h1>
+				<form data-ng-submit ="vm.functions.sendComment()">
+					<input type="hidden" name="userVisitedIdu">
+					<textarea placeholder="Escribe tu mensaje aqui..."  data-ng-model = "vm.boxComment.text"></textarea>
+					<input type="submit" value="Enviar">
+				</form>
+			</div>
+		<h2>COMENTARIOS:</h2>
+			<p data-ng-if = "vm.comments.length == 0">Este usuario todavia no tiene ningún comentario.</p>
+			<div class="userComments" data-ng-repeat = "comment in vm.comments">
+				<h1 class="userComments">
+					Comentario de {{vm.users[comment.sender].username}}
+					<a
+							data-ng-href="#/editComment/{{comment.idc}}"><img
+							class="icon"
+							src="../icons/edit.png"
+							alt="editar comentario" 
+							data-ng-if = "comment.sender == vm.loggedUser.idu"/></a>
+						<a
+							data-ng-href="#/deleteComment/{{comment.idc}}"><img
+							class="icon"
+							src="../icons/delete.png"
+							alt="eliminar comentario"
+							data-ng-if = "comment.sender == vm.loggedUser.idu" /></a>
+				</h1>
+				<p class="userComments">{{comment.text}}</p>
+				<p class="timeStamp">{{comment.timeStamp}}</p>
+			</div>
+	</div>

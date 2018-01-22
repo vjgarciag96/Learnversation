@@ -1,0 +1,9 @@
+<div class="formWrapper">
+	<h1>Eliminar comentario</h1>
+	<form data-ng-submit = "vm.functions.confirmDelete()">
+		<p>¿Estás seguro que quieres eliminar este comentario?</p>
+		<p>Destinatario: {{vm.users[vm.comment.receiver].username}}</p>
+		<p>Mensaje: {{vm.comment.text}}</p>
+		<input type="submit" value="Confirmar Eliminacion">
+	</form>
+</div>

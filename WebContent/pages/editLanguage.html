@@ -1,0 +1,20 @@
+<div class="formWrapper">
+		<h1>Editando nivel de {{vm.languages[vm.userLanguage.idl].langname}}</h1>
+		<form data-ng-submit = "vm.functions.confirmEdition()">
+			 <label>Nivel hablado: <select data-ng-model="vm.userLanguage.speakingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+				</select>
+			</label> <label>Nivel escrito: <select data-ng-model="vm.userLanguage.writingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+				</select>
+			</label> <label>Nivel comprensión auditiva: <select data-ng-model="vm.userLanguage.listeningLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+				</select>
+			</label><label>Nivel comprensión lectora: <select data-ng-model="vm.userLanguage.readingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+				</select>
+			</label> <a
+				href="#/languageReferences">
+				¿Qué nivel tengo? </a> <input type="submit" value="Confirmar Edición">
+		</form>
+	</div>

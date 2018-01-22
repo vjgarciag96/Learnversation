@@ -1,0 +1,39 @@
+<div class="formWrapper">
+	<h1>Busca compañer@s de conversación</h1>
+	<form data-ng-submit = "vm.functions.searchUsers(vm.path)">
+		<label>Domina 
+				<select data-ng-model="vm.selectedLanguage"
+				data-ng-options="language.idl as language.langname for language in vm.languages">
+					<option value="">Selecciona Idioma</option>
+				</select>				
+		</label> <label>Nivel hablado: <select data-ng-model="vm.selectedSpeakingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="">Selecciona nivel hablado</option>
+				</select>
+		</label> <label>Nivel escrito: <select data-ng-model="vm.selectedWritingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="">Selecciona nivel escrito</option>
+				</select>
+		</label> <label>Nivel de comprensión auditiva: <select data-ng-model="vm.selectedListeningLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="">Selecciona nivel comprensión auditiva</option>
+				</select>
+		</label><label>Nivel de comprensión lectora: <select data-ng-model="vm.selectedReadingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="">Selecciona nivel comprensión lectora</option>
+				</select>
+		</label> <a href="#/languageReferences">¿Que nivel
+			necesito?</a> <label>País :<select data-ng-model="vm.selectedCountry"
+				data-ng-options="country as country.name for country in vm.countries track by country.countryId">					
+					<option value="">País</option>
+				</select>
+		</label> <label id="type">Tipo de intercambio</label> <label>Conversación
+			cara a cara<input type="checkbox"
+			data-ng-model="vm.selectedExchangeType1">
+		</label> <label>Conversación a través de internet<input
+			type="checkbox" data-ng-model="vm.selectedExchangeType2"></label> <label>Nombre
+			de usuario: <input type="text" name="username"
+			placeholder="Nombre de usuario" data-ng-model="vm.selectedUsername">
+		</label> <input type="submit" value="Buscar">
+	</form>
+</div>

@@ -1,0 +1,24 @@
+div.imageWrapper {
+	width: 80%;
+	margin: 60px 10% 65px 10%;
+	display: inline-block;
+}
+
+img.profileImage {
+	width: 300px;
+	height: 300px;
+}
+
+h2.title {
+	color: #6f471a;
+	font-size: medium;
+	margin-bottom: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+footer {
+	position: fixed;
+}

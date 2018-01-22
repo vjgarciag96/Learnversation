@@ -1,0 +1,9 @@
+<h1>Elige tu foto de perfil</h1>
+<div class="imageWrapper">
+	<h2 class="title">Pincha sobre la imagen que quieres utilizar en
+		tu perfil</h2>
+		<img data-ng-click = "vm.functions.changeProfileImage(image.idi)"
+			class=profileImage
+			data-ng-src="../profileImages/{{vm.images[image.idi].imageName}}"
+			alt="Imagen de perfil {{image.idi}}" data-ng-repeat = "image in vm.images"> 
+</div>

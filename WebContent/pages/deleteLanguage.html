@@ -1,0 +1,14 @@
+<div class="formWrapper">
+	<h1>Eliminar idioma.</h1>
+	<form data-ng-submit = "vm.functions.confirmDelete()">
+		<p>¿Estás seguro de que deseas eliminar el idioma siguiente?</p>
+		<ul>
+			<li>Idioma: {{vm.languages[vm.userLanguage.idl].langname}}</li>
+			<li>Nivel hablado: {{vm.levels[vm.userLanguage.speakingLevel].levelName}}</li>
+			<li>Nivel escrito: {{vm.levels[vm.userLanguage.writingLevel].levelName}}</li>
+			<li>Nivel comprensión auditiva: {{vm.levels[vm.userLanguage.listeningLevel].levelName}}</li>
+			<li>Nivel comprensión lectora: {{vm.levels[vm.userLanguage.readingLevel].levelName}}</li>
+		</ul>
+		<input type="submit" value="Confirmar Eliminacion">
+	</form>
+</div>

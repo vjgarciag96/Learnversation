@@ -1,0 +1,12 @@
+<div class="formWrapper">
+	<h1>{{vm.loggedUser.username}},¿estás seguro de que quieres
+		eliminar tu perfil?</h1>
+	<form data-ng-submit = "vm.functions.confirmDelete()">
+		<p class="errorMessage">{{vm.errorMessage}}</p>
+		<p>Para dar de baja tu perfil, introduce tu contraseña y confirma
+			la eliminación.</p>
+		<label>*Contraseña: <input type="password" name="password"
+			placeholder="Contraseña" data-ng-model = "vm.password"></label> <input type="submit"
+			value="Confirmar Eliminacion">
+	</form>
+</div>

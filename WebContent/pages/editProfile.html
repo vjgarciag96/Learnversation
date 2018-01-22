@@ -1,0 +1,20 @@
+<div class="formWrapper">
+        <h1>Edita tu perfil</h1>
+        <form data-ng-submit = "vm.functions.confirmEdition()">
+        	<p class="errorMessage">{{vm.errorMessage}}</p>
+            <label>Nombre de usuario: <input type="text" placeholder="Nombre" data-ng-model = "vm.loggedUser.username"></label>          
+            <label>Fecha de nacimiento: <input type="date" data-ng-model = "vm.birthDateFormated"></label>
+            <label>País de residencia: <select data-ng-model="vm.loggedUser.country"
+				data-ng-options="country.name as country.name for country in vm.countries">					
+				</select></label>
+            <label>Género:</label>
+            <label><input type="radio" data-ng-model = "vm.loggedUser.gender" value = "Hombre">Hombre</label>
+            <label><input type="radio" data-ng-model = "vm.loggedUser.gender" value = "Mujer">Mujer</label>
+            <label>Tipo de intercambio</label>  
+            <label><input type="checkbox" name="exchangeTypes" data-ng-model = "vm.exchangeTypeFirst">Conversación cara a cara</label>
+            <label><input type="checkbox" name="exchangeTypes" data-ng-model = "vm.exchangeTypeSecond" >A través de internet</label>                               
+            <label>Correo electrónico: <input type="email" name="email" placeholder="E-mail" data-ng-model = "vm.loggedUser.email"></label>
+            <a href="#/changePassword">Cambiar contraseña</a>
+            <input type="submit" value="Guardar edición">
+        </form>
+    </div>

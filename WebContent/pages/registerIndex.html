@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="RegisterApp">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/MainStyle.css">
+<title>Learnversation</title>
+<script src="../js/angular/angular.js"></script>
+<script src="../js/angular/angular-route.js"></script>
+<script src="../js/encrypt/sha256.js"></script>
+<script src="../js/registerApp.js"></script>
+<script src="../js/registerFactories/countriesFactory.js"></script>
+<script src="../js/registerFactories/usersFactory.js"></script>
+<script src="../js/registerControllers/registerProfileController.js"></script>
+<script src="../js/angular/angular-css.min.js"></script>
+</head>
+<body>
+<header>
+        <a href="../exchange/LoginServlet">Learnversation</a>
+        <ul class="topnav">     	
+	            <li><a href="registerIndex.html#/">Regístrate</a></li>
+        </ul>
+        <a id="menu" href="#menu"><img src="../icons/ic_menu_black_24px.svg" alt="menu icon"></a>
+</header>
+<div data-ng-view>
+</div>
+<footer>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+</footer>
+</body>

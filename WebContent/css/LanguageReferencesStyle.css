@@ -1,0 +1,28 @@
+table{
+    margin: 60px 12% 20px 10%;
+}
+
+table, th, td{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 100px;
+}
+
+td{
+    text-align: center;
+}
+
+footer{
+	position: fixed;
+}
+@media (max-width: 600px) {
+    table{
+        font-size: medium;
+    }
+
+    th, td{
+        font-size: smaller;
+    }
+}

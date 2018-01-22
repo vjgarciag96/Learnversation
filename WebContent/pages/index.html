@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="LearnversationApp">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/MainStyle.css">
+<title>Learnversation</title>
+<script src="../js/angular/angular.js"></script>
+<script src="../js/angular/angular-route.js"></script>
+<script src="../js/encrypt/sha256.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/registerApp.js"></script>
+<script src="../js/controllers/simpleSearchController.js"></script>
+<script src="../js/controllers/searchResultController.js"></script>
+<script src="../js/controllers/userProfileController.js"></script>
+<script src="../js/controllers/editCommentController.js"></script>
+<script src="../js/controllers/editProfileController.js"></script>
+<script src="../js/controllers/deleteCommentController.js"></script>
+<script src="../js/controllers/addLanguageController.js"></script>
+<script src="../js/controllers/editLanguageController.js"></script>
+<script src="../js/controllers/deleteLanguageController.js"></script>
+<script src="../js/controllers/deleteProfileController.js"></script>
+<script src="../js/controllers/editProfileImageController.js"></script>
+<script src="../js/controllers/changePasswordController.js"></script>
+<script src="../js/factories/languagesFactory.js"></script>
+<script src="../js/factories/levelsFactory.js"></script>
+<script src="../js/factories/countriesFactory.js"></script>
+<script src="../js/factories/commentsFactory.js"></script>
+<script src="../js/factories/searchParametersFactory.js"></script>
+<script src="../js/factories/userProfileImagesFactory.js"></script>
+<script src="../js/factories/usersFactory.js"></script>
+<script src="../js/factories/usersLanguagesFactory.js"></script>
+<script src="../js/angular/angular-css.min.js"></script>
+</head>
+<body>
+<header>
+        <a href="index.html#/">Learnversation</a>
+        <ul class="topnav">     	
+	            <li><a href="#/searchResult">Buscar usuarios</a></li>
+	            <li><a href="#/userProfile/myProfile">Mi perfil</a></li>
+	            <li><a href="../exchange/LogoutServlet">Cerrar sesión</a></li>
+        </ul>
+        <a id="menu" href="#menu"><img src="../icons/ic_menu_black_24px.svg" alt="menu icon"></a>
+</header>
+<div data-ng-view>
+</div>
+<footer>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" />
+        </a>
+</footer>
+</body>

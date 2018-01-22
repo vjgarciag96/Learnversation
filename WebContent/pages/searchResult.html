@@ -1,0 +1,83 @@
+<div class="pageBodyWrapper">
+	<div class="searchOptionsWrapper"
+		data-ng-controller="simpleSearchCtrl as vm">
+		<form data-ng-submit="vm.functions.searchUsers(); vmsearch.functions.refilterUsers();">
+			<label>Domina: <select data-ng-model="vm.selectedLanguage"
+				data-ng-options="language.idl as language.langname for language in vm.languages">
+					<option value = "">---</option>
+			</select>
+			</label> <label>Nivel hablado: <select
+				data-ng-model="vm.selectedSpeakingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value = "">---</option>
+			</select>
+			</label> <label>Nivel escrito: <select
+				data-ng-model="vm.selectedWritingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value = "">---</option>
+			</select>
+			</label> <label>Nivel comprensión auditiva: <select
+				data-ng-model="vm.selectedListeningLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value = "">---</option>
+			</select></label> <label>Nivel comprensión lectora: <select
+				data-ng-model="vm.selectedReadingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value = "">---</option>
+			</select> <a
+				href="#/languageReferences">¿Que
+					nivel necesito?</a>
+			</label> <label>País<select data-ng-model="vm.selectedCountry"
+				data-ng-options="country.name for country in vm.countries track by country.countryId">
+					<option value="">---</option>
+			</select>
+			</label> <label class="singleLabel">Tipo de intercambio</label> <label>Conversación
+				cara a cara<input type="checkbox"
+				value="Cara a cara" data-ng-model="vm.selectedExchangeType1">
+			</label> <label>Conversación a través de internet<input
+				type="checkbox" value="A través de internet" data-ng-model="vm.selectedExchangeType2"></label>
+			<label>Nombre de usuario: <input type="text" name="username"
+				placeholder="Nombre de usuario" value="" data-ng-model="vm.selectedUsername"></label> <input
+				type="submit" value="Buscar">
+		</form>
+	</div>
+	<div class="searchResultsWrapper">
+		<p data-ng-if = "vmsearch.users.length == 0">No hay usuarios que coincidan con el criterio de búsqueda</p>
+		<div class="userBox" data-ng-repeat = "user in vmsearch.users">
+			<div class="boxTitle">
+				<h1>{{user.username}}</h1>
+			</div>
+			<div class="profileContent">
+				<div class="firstBlock">
+					<div class="profileImage">
+						<img
+							data-ng-src="../profileImages/{{vmsearch.images[user.idi].imageName}}"
+							alt="Foto de perfil de {{user.username}}">
+					</div>
+					<div class="textInfo">
+						<h2>GÉNERO:</h2>
+						<p>{{user.gender}}</p>
+						<h2>PAÍS:</h2>
+						<p>{{user.country}}</p>
+						<h2>IDIOMA/S QUE DOMINA:</h2>
+						<div data-ng-repeat = "userLanguage in vmsearch.usersLanguages" data-ng-if= "userLanguage.idu == user.idu">
+						<p>{{vmsearch.languages[userLanguage.idl].langname}}. Nivel hablado:{{vmsearch.levels[userLanguage.speakingLevel].levelName}} 
+						Nivel escrito: {{vmsearch.levels[userLanguage.writingLevel].levelName}} Nivel comprensión auditiva: {{vmsearch.levels[userLanguage.listeningLevel].levelName}}
+							Nivel comprensión lectora: {{vmsearch.levels[userLanguage.readingLevel].levelName}}</p>
+						</div>					
+						<h2>TIPO DE INTERCAMBIO:</h2>
+						<p>{{user.exchangeTypes}}</p>
+					</div>
+				</div>
+				<div class="boxFooter">
+					<a class="seeProfile"
+						data-ng-href="#/userProfile/{{user.idu}}">
+						<img class="icon" alt="Ver perfil de usuario"
+						src="../icons/seeProfile.png">Ver
+						perfil
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

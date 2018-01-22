@@ -1,0 +1,28 @@
+<div class="formWrapper">
+	<h1>Añade un idioma nuevo.</h1>
+	<form data-ng-submit = "vm.functions.addLanguage()">
+		<label>Idioma que puedes aportar: <select
+			data-ng-model="vm.userLanguage.idl"
+			data-ng-options="language.idl as language.langname for language in vm.languages">
+				<option value="-1">Selecciona Idioma</option>
+		</select>
+		</label> <label>Nivel hablado: <select data-ng-model="vm.userLanguage.speakingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="-1">Selecciona nivel hablado</option>
+				</select>
+		</label> <label>Nivel escrito: <select data-ng-model="vm.userLanguage.writingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="-1">Selecciona nivel escrito</option>
+				</select>
+		</label> <label>Nivel comprensión auditiva: <select data-ng-model="vm.userLanguage.listeningLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">
+					<option value="-1">Selecciona nivel comprensión auditiva</option>
+				</select>
+		</label><label>Nivel comprensión lectora: <select data-ng-model="vm.userLanguage.readingLevel"
+				data-ng-options="level.idlv as level.levelName for level in vm.levels">			
+				<option value="-1">Selecciona nivel comprensión lectora</option>
+				</select></label> <a
+			href="#/languageReferences">
+			¿Qué nivel tengo? </a> <input type="submit" value="Añadir idioma">
+	</form>
+</div>

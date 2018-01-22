@@ -1,0 +1,153 @@
+div.userBox{
+    margin: 80px auto 65px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80%;
+    background-color: #fff;
+}
+
+div.firstBlock{
+    display: inline-flex;
+}
+
+div.profileContent{
+    display: block;
+    margin-left: 0;
+}
+
+div.profileInfo#textInfo{
+    margin: 30px 4px 4px 50px;
+}
+
+div.profileInfo#profileImage{
+    margin-top: 30px;
+    margin-left: 12px;
+}
+
+div.profileInfo img{
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+div.commentsWrapper{
+    width: 80%;
+    margin: 16px auto 100px auto;
+}
+
+div.userComments{
+    margin: 16px auto 36px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #fff;
+}
+
+div.userComments p{
+    padding: 12px;
+}
+
+h1{
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 8px;
+}
+
+h1 a{
+    font-size: small;
+}
+
+h1.userComments{
+    font-size: medium;
+}
+
+a.deleteProfile{
+	float: right;
+	color: red;		
+}
+
+h2{
+	font-size: small;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+div.profileInfo img.icon, img.icon{
+	border: 0;
+	width: 20px;
+	height: 20px;
+}
+
+input[type=submit]{
+    display: inline-block;
+    background-color: #2AAF74;
+    height: 30px;
+    text-align: center;
+    color: white;
+    margin-bottom: 12px;
+    border: 0;
+    border-radius: 8px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    font-size: medium;
+}
+
+input[type=submit]:hover{
+    background-color: #4ED99C;
+}
+
+p{
+    font-size: smaller;
+    margin: 0 0 5px;
+}
+
+p.timeStamp{
+    float: right;
+}
+
+p.changeImgProfileInfo{
+	font-size: x-small;
+}
+
+p.userLanguageDescription{
+	display: inline-block;
+}
+form{
+    display: initial;
+}
+
+footer{
+    position: fixed;
+}
+
+@media (max-width: 500px) {
+
+    div.userBox{
+        width: 100%;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    div.firstBlock{
+        display: block;
+    }
+}
+
+@media (max-width: 266px) {
+    div.profileInfo img{
+        width: 80%;
+        height: 150px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    div.profileInfo#profileImage{
+        margin-left: 0;
+    }
+
+    .ec-stars-wrapper a, input[type=submit]{
+        margin: 0;
+    }
+
+}

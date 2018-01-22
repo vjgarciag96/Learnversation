@@ -1,0 +1,9 @@
+<div class="formWrapper">
+			<h1 class="userComments">Editar comentario enviado a {{vm.users[vm.comment.receiver].username}}</h1>
+			<form data-ng-submit = "vm.functions.confirmEdition()">
+				<p>{{vm.editionMessage}}</p>
+				<p class="errorMessage">{{vm.errorMessage}}</p>			
+				<textarea placeholder="Escribe tu mensaje aqui..." data-ng-model = "vm.comment.text">{{vm.comment.text}}</textarea>
+				<input type="submit" value="Guardar Edición">
+			</form>
+</div>

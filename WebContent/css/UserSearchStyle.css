@@ -1,0 +1,49 @@
+fieldset{
+    background-color: whitesmoke;
+    position: static;
+    max-width: 360px;
+    margin: auto;
+    display: block;
+    z-index: 5;
+}
+legend{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    color: #F7BE7F;
+    margin: auto;
+}
+
+input[type=submit]{
+    display: block;
+    background-color: #2AAF74;
+    width: 30%;
+    text-align: center;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 8px 0 0;
+}
+
+input[type=submit]:hover{
+    background-color: #4ED99C;
+}
+
+label{
+    font-family: 'Open Sans', sans-serif !important;
+    line-height: 1.9em;
+    margin-left: 2px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+    display: block;
+}
+
+select{
+    display: block;
+    margin: 0;
+}
+
+a{
+    color: #110d92;
+}
